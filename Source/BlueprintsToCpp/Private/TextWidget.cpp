@@ -23,14 +23,12 @@ void UTextWidget::NativeConstruct()
 
 void UTextWidget::TextBtnOnClicked()
 {
-	TextLabel->SetText(FText::AsNumber(999));
+	
 	
 	FName TestName = FName(*TestStr);
 	
 	FText TestTxt1 = FText::FromString(TestStr);
 	FText TestTxt2 = FText::AsCultureInvariant(TestStr);
-	
-	
 	
 	//конвертация в строку из Name или из Text в зависимости от переменной IsName
 	//при помощи тернарного оператора "?" он более удобен и лучше читаем чем "If Else"
@@ -52,5 +50,19 @@ void UTextWidget::TextBtnOnClicked()
 	// конвертируем из числа в текст
 	FString FromInt = FString::FromInt(ToInt);
 	FString FromFloat = FString::SanitizeFloat(ToFloat);
+
+	const int32 IntVal = 3;
+	const float FloatVal = 17.2;
+
+	// конвертация Int и Float в строку String
+	FString TestStr3 = FString::Printf(TEXT("%d"), IntVal);
+	FString TestStr4 = FString::Printf(TEXT("%f"), FloatVal);
+
+	// конвертирование Int и Float в строку String с форматированием
+	FString TestStr5 = FString::Printf(TEXT("Number of Lives: %d"), IntVal);
+
+	TextLabel_01->SetText(FText::AsNumber(999));
+	TextLabel_02->SetText(FText::FromString(TestStr5));
+	
 }
 

@@ -24,8 +24,11 @@ protected:
 	int32 Lives;
 
 	UPROPERTY(BlueprintReadWrite, meta = (BindWidget))
-	class UTextBlock* TextLabel;
+	class UTextBlock* TextLabel_01;
 
+	UPROPERTY(BlueprintReadWrite, meta = (BindWidget))
+	class UTextBlock* TextLabel_02;
+	
 	UPROPERTY(BlueprintReadWrite, meta = (BindWidget))
 	class UTextBlock* TextTrueFalse;
 	
