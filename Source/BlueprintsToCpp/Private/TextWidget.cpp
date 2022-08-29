@@ -23,7 +23,7 @@ void UTextWidget::NativeConstruct()
 
 void UTextWidget::TextBtnOnClicked()
 {
-	
+
 	
 	FName TestName = FName(*TestStr);
 	
@@ -45,7 +45,7 @@ void UTextWidget::TextBtnOnClicked()
 
 	// конвертируем текст в числа
 	ToInt = FCString::Atoi(*TestStr);
-	float ToFloat = FCString::Atof(*TestStr);
+	ToFloat = FCString::Atof(*TestStr);
 
 	// конвертируем из числа в текст
 	FString FromInt = FString::FromInt(ToInt);
@@ -59,10 +59,26 @@ void UTextWidget::TextBtnOnClicked()
 	FString TestStr4 = FString::Printf(TEXT("%f"), FloatVal);
 
 	// конвертирование Int и Float в строку String с форматированием
-	FString TestStr5 = FString::Printf(TEXT("Number of Lives: %d"), IntVal);
+	FString TextLives = TEXT("Number of Lives: ");
+	FString TestStr5 = FString::Printf(TEXT("TextLives %d / Time: %f"), IntVal, FloatVal);
 
 	TextLabel_01->SetText(FText::AsNumber(999));
 	TextLabel_02->SetText(FText::FromString(TestStr5));
+
+	//Сравниваем строки
+
+	FString CompStr1 = TEXT("Unreal");
+	FString CompStr2 = TEXT("Engine");
+	FString CompStr3 = TEXT("UnReAl");
+
+	// Сравнение строк БЕЗ учета регистра 
+	// bool IsEqual = CompStr1 == CompStr3;
+	
+	// Сравнение строк С учетом регистра
+	bool IsEqual = CompStr1.Equals(CompStr3, ESearchCase::CaseSensitive);
+
+	FString TestStr6 = IsEqual ? TEXT("true") : TEXT("false");
+	TextLabel_03->SetText(FText::FromString(TestStr6));
 	
 }
 

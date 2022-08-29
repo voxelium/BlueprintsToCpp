@@ -27,10 +27,13 @@ protected:
 	class UTextBlock* TextLabel_01;
 
 	UPROPERTY(BlueprintReadWrite, meta = (BindWidget))
-	class UTextBlock* TextLabel_02;
+	UTextBlock* TextLabel_02;
 	
 	UPROPERTY(BlueprintReadWrite, meta = (BindWidget))
-	class UTextBlock* TextTrueFalse;
+	UTextBlock* TextLabel_03;
+	
+	UPROPERTY(BlueprintReadWrite, meta = (BindWidget))
+	UTextBlock* TextTrueFalse;
 	
 	UPROPERTY(BlueprintReadWrite, meta = (BindWidget))
 	class UButton* TextBtn;
@@ -40,6 +43,10 @@ protected:
 	
 	UPROPERTY(BlueprintReadWrite, meta = (BindWidget))
 	int32 ToInt;
+
+	UPROPERTY(BlueprintReadWrite, meta = (BindWidget))
+	float ToFloat;
+
 	
 	virtual void NativeConstruct() override;
 
